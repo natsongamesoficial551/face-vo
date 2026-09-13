@@ -25,7 +25,7 @@ android {
     buildTypes {
         debug {
             val configuredUrl = providers.gradleProperty("FACEVO_API_BASE_URL")
-                .getOrElse("http://10.0.2.2:8787/")
+                .getOrElse("https://facevo-api.onrender.com/")
             val baseUrl = configuredUrl.trimEnd('/') + "/"
             buildConfigField("String", "API_BASE_URL", "\"${baseUrl.replace("\"", "\\\"")}\"")
         }
