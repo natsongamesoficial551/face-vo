@@ -9,7 +9,7 @@ server/node_modules/
 
 # Android/Gradle
 .gradle/
-.gradle-local/gradle-*/
+.gradle-local/
 build/
 app/build/
 local.properties
@@ -24,6 +24,7 @@ squads/*/output/*/app-debug.apk
 .DS_Store
 Thumbs.db
 .idea/
+.claude/
 *.iml
 
 # Logs
