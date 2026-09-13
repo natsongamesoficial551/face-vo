@@ -45,6 +45,19 @@ class FeedAdapter(
             }
             binding.playPauseButton.setOnClickListener { onTogglePlayback() }
             binding.soundButton.setOnClickListener { onToggleSound() }
+            binding.likeButton.setOnClickListener {
+                val active = binding.likeButton.tag == true
+                binding.likeButton.tag = !active
+                binding.likeButton.text = if (active) "Curtir" else "Curtido localmente"
+            }
+            binding.saveButton.setOnClickListener {
+                val active = binding.saveButton.tag == true
+                binding.saveButton.tag = !active
+                binding.saveButton.text = if (active) "Salvar" else "Salvo localmente"
+            }
+            binding.commentButton.setOnClickListener {
+                android.widget.Toast.makeText(binding.root.context, "Comentarios locais ainda nao disponiveis", android.widget.Toast.LENGTH_SHORT).show()
+            }
         }
 
         fun bind(video: CatalogVideo) {
@@ -65,6 +78,10 @@ class FeedAdapter(
                 .centerCrop()
                 .into(binding.thumbnail)
             resetPlaybackUi()
+            binding.likeButton.tag = false
+            binding.saveButton.tag = false
+            binding.likeButton.text = "Curtir"
+            binding.saveButton.text = "Salvar"
         }
 
         fun showPreparing() {
