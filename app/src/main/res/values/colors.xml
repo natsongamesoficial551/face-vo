@@ -1,5 +1,5 @@
 <resources>
-    <color name="feed_background">#0B4F9C</color>
+    <color name="feed_background">#000000</color>
     <color name="feed_text">#FFFFFF</color>
-    <color name="feed_scrim">#B300245C</color>
+    <color name="feed_scrim">#B3000000</color>
 </resources>
