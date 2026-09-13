@@ -150,6 +150,12 @@ function runYtDlp(args, timeoutMs) {
 
 function cleanYtDlpError(output) {
   const text = String(output || '');
+  if (/confirm your age|confirmar sua idade|inappropriate for some users|inapropriado para alguns usuários/i.test(text)) {
+    return 'O YouTube bloqueou este vídeo por restrição de idade. Escolha outro vídeo público ou envie um MP4 próprio/licenciado pelo formulário de upload.';
+  }
+  if (/sign in to confirm|login to confirm|faça login para confirmar/i.test(text)) {
+    return 'O YouTube exige login para este vídeo. Por segurança, não usamos cookies de conta no servidor; escolha outro vídeo público ou envie um MP4 licenciado.';
+  }
   const errorLine = text.split(/\r?\n/).find(line => line.includes('ERROR:'));
   if (errorLine) return errorLine.replace(/^ERROR:\s*/i, '').trim().slice(0, 240);
   return text.replace(/WARNING:[^\n]+\n?/gi, '').trim().slice(-240);

@@ -82,7 +82,9 @@ shortsSearchForm.addEventListener('submit', async e => {
     shortsSearchForm.reset();
     await load();
     const skipped = (result.skipped || []).slice(0, 5).map(v => `• ${v.title}: ${v.reason}`).join('\n');
-    alert(`${result.message}${skipped ? `\n\nPulados:\n${skipped}` : ''}`);
+    const ageBlocked = (result.skipped || []).filter(v => /restrição de idade|restrição|idade/i.test(v.reason || '')).length;
+    const guidance = ageBlocked ? `\n\n${ageBlocked} resultado(s) foram bloqueados por idade pelo YouTube. Use outro vídeo público ou envie um MP4 próprio/licenciado no formulário acima.` : '';
+    alert(`${result.message}${guidance}${skipped ? `\n\nPulados:\n${skipped}` : ''}`);
   }
   catch (err) { alert(err.message); }
   finally { btn.disabled = false; btn.textContent = 'Buscar, analisar e importar oculto'; }
