@@ -71,12 +71,42 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="#B3000000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="FaceVo Reels"
+            android:textColor="@color/feed_text"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/top_sound_button"
+            android:layout_width="60dp"
+            android:layout_height="56dp"
+            android:contentDescription="Ativar ou silenciar o som"
+            android:text="Som" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/details"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="82dp"
         android:background="@drawable/control_background"
         android:orientation="vertical"
         android:padding="16dp"
@@ -130,7 +160,7 @@
         android:layout_width="88dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="168dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -158,5 +188,39 @@
             android:layout_marginTop="8dp"
             android:contentDescription="Comentar sobre este video"
             android:text="Comentar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/comment_bar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="bottom"
+        android:background="#CC000000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/comment_input"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:hint="Adicione um comentario..."
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="2"
+            android:textColor="@color/feed_text"
+            android:textColorHint="#D0FFFFFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/comment_send_button"
+            android:layout_width="72dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:text="Enviar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

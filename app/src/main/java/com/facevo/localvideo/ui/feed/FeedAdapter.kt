@@ -56,8 +56,18 @@ class FeedAdapter(
                 binding.saveButton.text = if (active) "Salvar" else "Salvo localmente"
             }
             binding.commentButton.setOnClickListener {
-                android.widget.Toast.makeText(binding.root.context, "Comentarios locais ainda nao disponiveis", android.widget.Toast.LENGTH_SHORT).show()
+                binding.commentInput.requestFocus()
+                val input = binding.commentInput
+                (binding.root.context as? android.app.Activity)?.window?.setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
             }
+            binding.commentSendButton.setOnClickListener {
+                val text = binding.commentInput.text.toString().trim()
+                if (text.isNotEmpty()) {
+                    android.widget.Toast.makeText(binding.root.context, "Comentario salvo neste aparelho", android.widget.Toast.LENGTH_SHORT).show()
+                    binding.commentInput.text?.clear()
+                }
+            }
+            binding.topSoundButton.setOnClickListener { onToggleSound() }
         }
 
         fun bind(video: CatalogVideo) {
