@@ -22,8 +22,11 @@ export async function importYoutubeVideo(url, workDir, id) {
     '--no-playlist',
     '--no-warnings',
     '--force-overwrites',
+    '--socket-timeout', '30',
+    '--retries', '2',
+    '--concurrent-fragments', '4',
     '--ffmpeg-location', path.dirname(ffmpegPath),
-    '-f', 'bv*[vcodec^=avc1][ext=mp4][height<=1080]+ba[ext=m4a]/b[vcodec^=avc1][ext=mp4][height<=1080]/best[height<=1080]',
+    '-f', 'bv*[vcodec^=avc1][ext=mp4][height<=480]+ba[ext=m4a]/b[vcodec^=avc1][ext=mp4][height<=480]/best[height<=480]',
     '--merge-output-format', 'mp4',
     '-o', outputTemplate,
     url

@@ -17,7 +17,7 @@ export const config = {
   ffmpegPath: process.env.FFMPEG_PATH || '',
   ytDlpPath: process.env.YTDLP_PATH || 'yt-dlp',
   youtubeMaxDurationSec: Number(process.env.YT_MAX_DURATION_SEC || 180),
-  youtubeDownloadTimeoutMs: Number(process.env.YT_DOWNLOAD_TIMEOUT_MS || 180000),
+  youtubeDownloadTimeoutMs: Number(process.env.YT_DOWNLOAD_TIMEOUT_MS || 600000),
   youtubeSearchCandidates: Number(process.env.YT_SEARCH_CANDIDATES || 200),
   youtubeSearchTarget: Number(process.env.YT_SEARCH_TARGET || 100),
   youtubeShortsMaxDurationSec: Number(process.env.YT_SHORTS_MAX_DURATION_SEC || 90),
