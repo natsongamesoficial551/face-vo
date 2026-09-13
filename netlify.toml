@@ -1,0 +1,18 @@
+[build]
+  command = "node server/scripts/generate-public-config.js"
+  publish = "server/public"
+
+[build.environment]
+  NODE_VERSION = "22.19.0"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+
+[[headers]]
+  for = "/config.js"
+  [headers.values]
+    Cache-Control = "no-store"

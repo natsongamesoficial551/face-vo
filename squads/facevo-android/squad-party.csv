@@ -1,0 +1,5 @@
+id,name,title,icon,path,execution
+dados,Diego Dados,Engenheiro de Dados Android,🔌,./agents/dados.agent.md,inline
+feed,Felipe Feed,Engenheiro de Playback Android,🎬,./agents/feed.agent.md,inline
+acessibilidade,Alice Acessibilidade,Especialista em Acessibilidade Android,♿,./agents/acessibilidade.agent.md,inline
+revisao,Ricardo Revisao,Revisor de Qualidade Android,🔍,./agents/revisao.agent.md,subagent

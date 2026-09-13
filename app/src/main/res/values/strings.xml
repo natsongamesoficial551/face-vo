@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FaceVo</string>
+    <string name="loading_videos">Carregando videos</string>
+    <string name="feed_description">Videos do FaceVo. Deslize ou use os botoes Anterior e Proximo.</string>
+    <string name="empty_catalog">Ainda nao ha videos disponiveis. Voce pode tentar novamente daqui a pouco.</string>
+    <string name="try_again">Tentar novamente</string>
+    <string name="previous_video">Video anterior</string>
+    <string name="next_video">Proximo video</string>
+    <string name="buffering_video">Carregando video</string>
+    <string name="playback_error">Nao foi possivel reproduzir este video.</string>
+    <string name="retry_video">Tentar este video novamente</string>
+    <string name="pause_video">Pausar video</string>
+    <string name="play_video">Reproduzir video</string>
+    <string name="mute_video">Desativar som</string>
+    <string name="unmute_video">Ativar som</string>
+    <string name="video_thumbnail">Imagem de capa de %1$s</string>
+    <string name="video_by_author">%1$s, por %2$s</string>
+</resources>

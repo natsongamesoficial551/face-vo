@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FaceVo Admin</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Dashboard de curadoria</p>
+        <h1>FaceVo Admin</h1>
+        <p>Curadoria segura de vídeos positivos para Reels: plantas, trabalho manual, natureza e conteúdos calmos.</p>
+      </div>
+      <div class="server-card">
+        <span>Servidor do APK</span>
+        <strong id="serverUrl">carregando...</strong>
+        <button id="testAiBtn">Testar IA</button>
+      </div>
+    </header>
+
+    <section class="panel upload-panel">
+      <h2>Importar vídeo aprovado</h2>
+      <p class="hint">Suba um arquivo local já curado. O servidor converte para MP4 compatível com Android antes de publicar.</p>
+      <form id="uploadForm" class="grid-form">
+        <label>Vídeo MP4/MOV/WEBM<input name="video" type="file" accept="video/*" required></label>
+        <label>Screenshot/thumbnail<input name="screenshot" type="file" accept="image/*"></label>
+        <label>Título<input name="title" placeholder="Ex: Plantas no jardim" required></label>
+        <label>Categoria
+          <select name="category">
+            <option>Plantas</option><option>Educação</option><option>Diversão educativa</option><option>Trabalho</option><option>Natureza</option><option>Artesanato</option><option>Receitas</option><option>Animais</option><option>Positivo</option>
+          </select>
+        </label>
+        <label>Descrição<textarea name="description" placeholder="Descreva o conteúdo de forma simples"></textarea></label>
+        <label>Origem/permissão<textarea name="sourceNote" placeholder="Ex: vídeo próprio / vídeo licenciado"></textarea></label>
+        <label class="wide">O que aparece no screenshot/frames<textarea name="screenshotNote" placeholder="Ex: plantas e flores, sem pessoa falando para a câmera"></textarea></label>
+        <button class="primary" type="submit">Enviar e analisar com IA</button>
+      </form>
+    </section>
+
+    <section class="panel upload-panel">
+      <h2>Buscar Shorts com IA</h2>
+      <p class="hint">Digite um filtro seguro. O sistema busca Shorts, analisa por IA/regras, baixa até 100 aprováveis e deixa todos ocultos para você revisar e publicar.</p>
+      <form id="shortsSearchForm" class="grid-form">
+        <label class="wide">Filtro/pesquisa<input name="query" placeholder="Ex: plantas no jardim sem pessoas" required></label>
+        <label>Quantidade
+          <select name="targetCount">
+            <option value="100">Até 100 Shorts</option><option value="50">Até 50 Shorts</option><option value="25">Até 25 Shorts</option><option value="10">Até 10 Shorts</option><option value="1">Teste com 1 Short</option>
+          </select>
+        </label>
+        <label>Categoria
+          <select name="category">
+            <option>Plantas</option><option>Educação</option><option>Diversão educativa</option><option>Trabalho</option><option>Natureza</option><option>Artesanato</option><option>Receitas</option><option>Animais</option><option>Positivo</option>
+          </select>
+        </label>
+        <label>Descrição padrão<textarea name="description" placeholder="Ex: Shorts calmos e positivos"></textarea></label>
+        <label>Origem/permissão<textarea name="sourceNote" placeholder="Ex: busca automática curada pelo administrador"></textarea></label>
+        <label class="wide">Regras do que NÃO pode aparecer<textarea name="screenshotNote" placeholder="Ex: sem namoro, sem política, sem golpes, sem rosto/pessoa falando para câmera"></textarea></label>
+        <button class="primary" type="submit">Buscar, analisar e importar oculto</button>
+      </form>
+    </section>
+
+    <section class="panel upload-panel">
+      <h2>Importar por link do YouTube</h2>
+      <p class="hint">Cole um link do YouTube/Shorts já escolhido por você. O vídeo é baixado no servidor, convertido para Android e analisado antes de ficar disponível.</p>
+      <form id="youtubeForm" class="grid-form">
+        <label class="wide">Link do YouTube/Shorts<input name="url" type="url" placeholder="https://www.youtube.com/shorts/..." required></label>
+        <label>Título opcional<input name="title" placeholder="Deixe vazio para usar o título do YouTube"></label>
+        <label>Categoria
+          <select name="category">
+            <option>Plantas</option><option>Educação</option><option>Diversão educativa</option><option>Trabalho</option><option>Natureza</option><option>Artesanato</option><option>Receitas</option><option>Animais</option><option>Positivo</option>
+          </select>
+        </label>
+        <label>Descrição<textarea name="description" placeholder="Ex: vídeo calmo de plantas e flores"></textarea></label>
+        <label>Origem/permissão<textarea name="sourceNote" placeholder="Ex: link curado pelo administrador / licença conferida"></textarea></label>
+        <label class="wide">O que aparece no vídeo<textarea name="screenshotNote" placeholder="Ex: jardim, folhas e flores; sem rosto/pessoa falando para a câmera"></textarea></label>
+        <button class="primary" type="submit">Importar link e analisar</button>
+      </form>
+    </section>
+
+    <section class="panel rules">
+      <div><strong>Permitido</strong><p>plantas, jardinagem, trabalho manual, artesanato, natureza, animais tranquilos, culinária simples, paisagens, música leve.</p></div>
+      <div><strong>Bloqueado</strong><p>namoro, relacionamentos, rostos/desconhecidos criando vínculo, tristeza, política, golpes, apostas, dinheiro fácil, manipulação emocional.</p></div>
+    </section>
+
+    <section class="library-head">
+      <h2>Catálogo</h2>
+      <div id="summary"></div>
+    </section>
+    <section id="library" class="library"></section>
+  </main>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

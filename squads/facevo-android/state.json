@@ -1,0 +1,48 @@
+{
+  "squad": "facevo-android",
+  "status": "completed",
+  "step": {
+    "current": 6,
+    "total": 6,
+    "label": "aprovar-entrega"
+  },
+  "agents": [
+    {
+      "id": "dados",
+      "name": "Diego Dados",
+      "icon": "🔌",
+      "status": "done",
+      "desk": { "col": 1, "row": 1 }
+    },
+    {
+      "id": "feed",
+      "name": "Felipe Feed",
+      "icon": "🎬",
+      "status": "done",
+      "desk": { "col": 2, "row": 1 }
+    },
+    {
+      "id": "acessibilidade",
+      "name": "Alice Acessibilidade",
+      "icon": "♿",
+      "status": "done",
+      "desk": { "col": 3, "row": 1 }
+    },
+    {
+      "id": "revisao",
+      "name": "Ricardo Revisao",
+      "icon": "🔍",
+      "status": "done",
+      "desk": { "col": 1, "row": 2 }
+    }
+  ],
+  "handoff": {
+    "from": "revisao",
+    "to": "usuario",
+    "message": "Entrega aprovada condicionalmente com APK debug, deploy configurado e curadoria aguardando midias licenciadas.",
+    "completedAt": "2026-09-13T11:40:00-03:00"
+  },
+  "startedAt": "2026-09-13T07:27:36.0487566-03:00",
+  "updatedAt": "2026-09-13T11:40:00-03:00",
+  "completedAt": "2026-09-13T11:40:00-03:00"
+}

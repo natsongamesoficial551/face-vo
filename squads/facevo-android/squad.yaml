@@ -1,0 +1,27 @@
+code: "facevo-android"
+name: "FaceVo Android"
+description: "Implementa e valida o aplicativo Android acessivel do FaceVo de ponta a ponta."
+version: "1.0.0"
+language: "pt-BR"
+entrypoint: "pipeline/pipeline.yaml"
+
+skills:
+  - web_search
+  - web_fetch
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md
+  - pipeline/data/tone-of-voice.md
+
+memory:
+  learnings: "_memory/memories.md"
+  runs: "_memory/runs.md"
+
+pipeline:
+  file: "pipeline/pipeline.yaml"
+  output_directory: "output"
+  trigger: "manual"

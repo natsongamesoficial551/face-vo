@@ -1,0 +1,28 @@
+squad_code: "facevo-android"
+purpose: "Concluir integralmente o aplicativo Android FaceVo, implementando o feed vertical, integracao com o catalogo, reproducao de videos, acessibilidade, testes e geracao do APK."
+domain: "automation"
+
+company:
+  name: "NatanSites"
+  tone: "Simples, acolhedor, seguro e direto"
+  products: "FaceVo, plataforma de curadoria de videos curtos e seguros para idosos"
+
+language: "Portugues"
+
+context:
+  trigger: "Execucao manual sob demanda"
+  systems: "Projeto Android FaceVo, API GET /api/catalog, Media3 ExoPlayer e servidor Node.js existente"
+  frequency: "Sob demanda"
+  delivery_mode: "Implementar, testar e gerar o APK quando o ambiente permitir"
+  audience: "Idosos e seus familiares ou cuidadores"
+
+tools_needed:
+  - "Leitura e escrita de arquivos"
+  - "Execucao de Gradle e testes Android"
+  - "Pesquisa web tecnica"
+
+investigation:
+  enabled: false
+  profiles: []
+
+target_formats: []
